@@ -6,6 +6,9 @@ set(PROJECT_NAME "scrunsh")
 
 project(${PROJECT_NAME})
 
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp
+  src/Core.cpp
+  src/Input.cpp
+)
 
 target_include_directories(${PROJECT_NAME} PUBLIC include)

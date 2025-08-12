@@ -1,19 +1,8 @@
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdio.h>
-#include <cstdlib>
+#include "Core.hpp"
 
 int main() {
-  pid_t pid = fork();
-  if (pid == 0) {
-      char* args[] = { (char*)"fdisk", (char*)"/dev/sda", nullptr };
-      execvp(args[0], args);
-      perror("execvp failed");
-      exit(1);
-  } else if (pid > 0) {
-      waitpid(pid, nullptr, 0);
-  }
+  Args arguments = {"less", "../CMakeLists.txt"};
+  Core::runCommand(arguments);
 
   return 0;
 }
