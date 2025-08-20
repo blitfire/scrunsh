@@ -5,7 +5,7 @@ int main() {
   // Args arguments = {"less", "../CMakeLists.txt"};
 
   while (true) {
-    Args arguments = { Input::get().getCommand() };
+    Command arguments = Input::get().getCommand();
     Core::runCommand(arguments);
   }
 

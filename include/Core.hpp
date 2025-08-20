@@ -1,15 +1,9 @@
 #pragma once
 
-#include <cmath>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <stdio.h>
-#include <cstdlib>
-#include <vector>
-#include <string>
-
-using Args = std::vector<std::string>;
+#include "typedefs.hpp"
 
 class Core {
   Core() = default;
@@ -23,5 +17,5 @@ public:
     return singleton;
   }
 
-  static void runCommand(Args& args);
+  static void runCommand(Command& args);
 };

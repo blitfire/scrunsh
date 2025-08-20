@@ -1,10 +1,11 @@
 #pragma once
 
+#include "typedefs.hpp"
 #include <string>
 #include <vector>
 
 class Input {
-  std::vector<std::string> history;
+  std::vector<Command> history;
 
   Input() = default;
 
@@ -17,5 +18,5 @@ public:
     return singleton;
   }
 
-  std::string getCommand();
+  Command getCommand();
 };

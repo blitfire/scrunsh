@@ -1,10 +1,18 @@
 #include "Input.hpp"
+#include "typedefs.hpp"
 #include <iostream>
+#include <sstream>
 
-std::string Input::getCommand() {
-  std::string cmd;
-  std::getline(std::cin, cmd);
-  history.push_back(cmd);
+Command Input::getCommand() {
+  std::string input;
+  std::getline(std::cin, input);
+  std::stringstream stream;
+  stream << input;
 
-  return cmd;
+  Command out;
+  std::string arg;
+  while (stream >> arg) out.push_back(arg);
+  history.push_back(out);
+
+  return out;
 }

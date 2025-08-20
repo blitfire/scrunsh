@@ -1,6 +1,10 @@
+#include <stdio.h>
+#include <cstdlib>
+#include <vector>
+#include <string>
 #include "Core.hpp"
 
-void Core::runCommand(Args& args) {
+void Core::runCommand(Command& args) {
   pid_t pid = fork();
   if (pid == 0) {
     std::vector<char*> argv;
